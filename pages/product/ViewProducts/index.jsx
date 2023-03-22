@@ -189,7 +189,7 @@ const ViewProducts = () => {
 		if (!confirm) {
 			return;
 		}
-		if (state && state.login) {
+		if (route.isReady) {
 			window.localStorage.removeItem("admin-asad");
 			setState({});
 			route.push("/login");
