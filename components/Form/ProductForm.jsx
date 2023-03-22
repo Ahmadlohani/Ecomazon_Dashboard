@@ -4,7 +4,6 @@ import {
 	Avatar,
 	Box,
 	Button,
-	Fab,
 	FormControl,
 	InputLabel,
 	MenuItem,
@@ -13,10 +12,7 @@ import {
 	TextField,
 } from "@mui/material";
 import {
-	Add,
 	AddAPhoto,
-	AddAPhotoOutlined,
-	CameraOutlined,
 	CancelOutlined,
 	CategoryOutlined,
 	Edit,
@@ -173,22 +169,18 @@ const ProductForm = ({
 				{mode == "update" && (
 					<div>
 						<label>
-							{imageLoading ? (
-								"Loading..."
-							) : (
-								<Edit
-									fontSize="large"
-									sx={{
-										fontSize: 40,
-										padding: 1,
-										marginTop: 1,
-										marginLeft: 1,
-										background: `${colors.bg}`,
-										color: "white",
-										borderRadius: "100%",
-									}}
-								/>
-							)}
+							<Edit
+								fontSize="large"
+								sx={{
+									fontSize: 40,
+									padding: 1,
+									marginTop: 1,
+									marginLeft: 1,
+									background: `${colors.bg}`,
+									color: "white",
+									borderRadius: "100%",
+								}}
+							/>
 							<input
 								onChange={handleEdit}
 								type="file"
@@ -225,7 +217,6 @@ const ProductForm = ({
 						"Uploading..."
 					) : (
 						<AddAPhoto
-							fontSize="large"
 							sx={{
 								fontSize: 40,
 								padding: 1,

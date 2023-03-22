@@ -1,24 +1,13 @@
 import React from "react";
 import { colors } from "@/components/color";
 import {
-	Avatar,
 	Box,
 	Button,
-	Fab,
-	FormControl,
-	InputLabel,
-	MenuItem,
 	Paper,
-	Select,
 	TextField,
 } from "@mui/material";
 import {
-	Add,
-	AddAPhoto,
-	AddAPhotoOutlined,
-	CameraOutlined,
 	CancelOutlined,
-	CategoryOutlined,
 	RotateLeftOutlined,
 	Send,
 } from "@mui/icons-material";

@@ -5,7 +5,6 @@ import React, {
 } from "react";
 import { Grid } from "@mui/material";
 import ProductForm from "@/components/Form/ProductForm";
-import { nanoid } from "nanoid";
 import {
 	deleteObject,
 	getDownloadURL,
@@ -21,7 +20,6 @@ import {
 	getDocs,
 	query,
 	serverTimestamp,
-	setDoc,
 	updateDoc,
 } from "firebase/firestore";
 import { useRouter } from "next/router";
@@ -110,7 +108,6 @@ const EditProducts = () => {
 			const querySnapshot = await getDocs(q);
 			let item = [];
 			querySnapshot.forEach((doc) => {
-				// doc.data() is never undefined for query doc snapshots
 				item.push(doc.id);
 			});
 			setSubCategs(item);
@@ -124,7 +121,6 @@ const EditProducts = () => {
 			const querySnapshot = await getDocs(q);
 			let item = [];
 			querySnapshot.forEach((doc) => {
-				// doc.data() is never undefined for query doc snapshots
 				item.push(doc.id);
 			});
 			setCategs(item);
@@ -203,7 +199,6 @@ const EditProducts = () => {
 			storage,
 			`${cat}/${sub_cat}/${id}/${filename}`
 		);
-		// Delete the file
 		deleteObject(desertRef)
 			.then(() => {})
 			.catch((error) => {

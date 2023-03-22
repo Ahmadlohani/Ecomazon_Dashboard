@@ -3,7 +3,7 @@ import React, {
 	useEffect,
 	useState,
 } from "react";
-import { Button, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import ProductForm from "@/components/Form/ProductForm";
 import { nanoid } from "nanoid";
 import {
@@ -14,7 +14,6 @@ import {
 import { db, storage } from "@/pages/firebase/Config";
 import { toast } from "react-toastify";
 import {
-	addDoc,
 	collection,
 	doc,
 	getDocs,
@@ -23,8 +22,6 @@ import {
 	setDoc,
 } from "firebase/firestore";
 import { useRouter } from "next/router";
-import Link from "next/link";
-import { CategoryOutlined } from "@mui/icons-material";
 import { AuthContext } from "@/context/AuthContext";
 
 const AddProducts = () => {
@@ -59,7 +56,6 @@ const AddProducts = () => {
 			const querySnapshot = await getDocs(q);
 			let item = [];
 			querySnapshot.forEach((doc) => {
-				// doc.data() is never undefined for query doc snapshots
 				item.push(doc.id);
 			});
 			setSubCategs(item);
@@ -73,7 +69,6 @@ const AddProducts = () => {
 			const querySnapshot = await getDocs(q);
 			let item = [];
 			querySnapshot.forEach((doc) => {
-				// doc.data() is never undefined for query doc snapshots
 				item.push(doc.id);
 			});
 			setCategs(item);

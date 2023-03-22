@@ -22,14 +22,11 @@ import {
 	getDocs,
 	orderBy,
 	query,
-	where,
 } from "firebase/firestore";
 import { db, storage } from "@/pages/firebase/Config";
 import { Container } from "@mui/system";
 import {
-	Add,
 	AddCircleOutline,
-	CategoryOutlined,
 	DeleteOutline,
 	EditOutlined,
 	Logout,
