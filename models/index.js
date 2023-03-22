@@ -1,7 +1,0 @@
-import JS_CENTRE_FLOOR15_MBTU_PER_MIN from "./JS_UNITS/JS_CENTRE_FLOOR15_MBTU_PER_MIN";
-
-const models = [];
-models["JS_CENTRE_FLOOR15_MBTU_PER_MIN"] =
-	JS_CENTRE_FLOOR15_MBTU_PER_MIN;
-
-export default models;

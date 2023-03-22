@@ -1,11 +1,14 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
 .link {
 	color: inherit;
 	text-decoration: none;
 }
 .css-d9ml5t-MuiDrawer-docked .MuiDrawer-paper {
-	background-color: #212c4f !important;
-	color: white !important;
-}
-.active {
-	background-color: #384a85;
+	border: none !important;
 }

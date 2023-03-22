@@ -1,14 +1,9 @@
-import ResponsiveDrawer from "@/components/Drawer/ResponsiveDrawer";
 import React from "react";
-import Dashboard from "./user/dashboard";
-import Roles from "./user/Role/roles";
-
+import ViewProducts from "./product/ViewProducts";
 const Home = () => {
 	return (
 		<div>
-			<ResponsiveDrawer page={"Dashboard"}>
-				<Dashboard />
-			</ResponsiveDrawer>
+			<ViewProducts />
 		</div>
 	);
 };

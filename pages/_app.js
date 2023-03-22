@@ -5,7 +5,6 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import "react-calendar/dist/Calendar.css";
 import { AuthProvider } from "@/context/AuthContext";
 
 export default function App({ Component, pageProps }) {

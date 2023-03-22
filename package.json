@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@date-io/moment": "^2.16.1",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/roboto": "^4.5.8",
@@ -18,21 +17,14 @@
     "@mui/styled-engine-sc": "^5.11.0",
     "@mui/x-date-pickers": "^5.0.19",
     "@next/font": "13.1.6",
-    "axios": "^1.3.2",
-    "bcrypt": "^5.1.0",
-    "jsonwebtoken": "^9.0.0",
+    "firebase": "^9.18.0",
     "moment": "^2.29.4",
     "nanoid": "^4.0.1",
     "next": "13.1.6",
     "react": "18.2.0",
-    "react-calendar": "^4.0.0",
     "react-dom": "18.2.0",
     "react-toastify": "^9.1.1",
-    "recharts": "^2.3.2",
-    "sequelize": "^6.28.2",
-    "sequelize-auto": "^0.8.8",
-    "sequelize-cli": "^6.6.0",
-    "styled-components": "^5.3.6",
-    "tedious": "^15.1.3"
+    "sass": "^1.59.3",
+    "styled-components": "^5.3.6"
   }
 }
