@@ -13,6 +13,7 @@ import {
 } from "@mui/material";
 import {
 	AddAPhoto,
+	CameraAlt,
 	CancelOutlined,
 	CategoryOutlined,
 	Edit,
@@ -164,6 +165,7 @@ const ProductForm = ({
 			<Box
 				display={"flex"}
 				alignItems={"center"}
+				justifyContent={"space-between"}
 				marginBottom={1}
 			>
 				{mode == "update" && (
@@ -192,53 +194,57 @@ const ProductForm = ({
 						</label>
 					</div>
 				)}
-				<label>
-					{image ? (
-						<div
-							style={{
-								display: "flex",
-								justifyContent: "center",
-								alignItems: "center",
-							}}
-						>
-							{image?.map((val, i) => (
-								<Avatar
-									key={i}
-									size={30}
-									src={val.downloadURL}
-									sx={{
-										marginTop: 1,
-										marginLeft: 1,
-									}}
-								/>
-							))}
-						</div>
-					) : imageLoading ? (
-						"Uploading..."
-					) : (
-						<AddAPhoto
+				{Object.keys(image).length != 0 ? (
+					<div
+						style={{
+							display: "flex",
+							justifyContent: "center",
+							alignItems: "center",
+						}}
+					>
+						{image?.map((val, i) => (
+							<Avatar
+								key={i}
+								size={30}
+								src={val.downloadURL}
+								sx={{
+									marginTop: 1,
+									marginLeft: 1,
+								}}
+							/>
+						))}
+					</div>
+				) : imageLoading ? (
+					"Uploading..."
+				) : (
+					<label htmlFor="imaged">
+						<CameraAlt
+							fontSize="large"
 							sx={{
 								fontSize: 40,
 								padding: 1,
-								background: `${colors.color}`,
+								marginTop: 1,
+								marginLeft: 1,
+								background: `${colors.bg}`,
 								color: "white",
 								borderRadius: "100%",
 							}}
 						/>
-					)}
-					<input
-						onChange={handleImage}
-						type="file"
-						accept="images/*"
-						hidden
-						multiple
-						disabled={
-							details.category == "" ||
-							details.sub_category == "" ||
-							imageLoading
-						}
-					/>
-				</label>
+						<input
+							onChange={handleImage}
+							type="file"
+							accept="images/*"
+							id="imaged"
+							hidden
+							multiple
+							disabled={
+								details.category == "" ||
+								details.sub_category == "" ||
+								imageLoading
+							}
+						/>
+					</label>
+				)}
 			</Box>
 			<Button
 				variant="contained"
