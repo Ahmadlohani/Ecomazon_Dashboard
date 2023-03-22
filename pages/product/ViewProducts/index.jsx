@@ -32,6 +32,7 @@ import {
 	CategoryOutlined,
 	DeleteOutline,
 	EditOutlined,
+	Logout,
 } from "@mui/icons-material";
 import Link from "next/link";
 import { deleteObject, ref } from "firebase/storage";
@@ -74,7 +75,7 @@ const columns = [
 
 const ViewProducts = () => {
 	const route = useRouter();
-	const { state } = useContext(AuthContext);
+	const { state, setState } = useContext(AuthContext);
 	const [products, setProducts] = useState([]);
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -181,7 +182,20 @@ const ViewProducts = () => {
 				console.log(error);
 			});
 	};
-	if (route.isReady && state.length == 0) {
+	const handleLogOut = async () => {
+		const confirm = window.confirm(
+			"Are you sure to logout?"
+		);
+		if (!confirm) {
+			return;
+		}
+		if (state && state.login) {
+			window.localStorage.removeItem("admin-asad");
+			setState({});
+			route.push("/login");
+		}
+	};
+	if (route.isReady && state == null) {
 		route.push("/login");
 	}
 	return (
@@ -195,20 +209,39 @@ const ViewProducts = () => {
 			}}
 		>
 			<Container>
-				<div style={{ marginBottom: 10 }}>
-					<Link
-						className="link"
-						href={`/product/AddProducts`}
-					>
+				<div
+					style={{
+						display: "flex",
+						justifyContent: "space-between",
+						alignItems: "center",
+					}}
+				>
+					<div style={{ marginBottom: 10 }}>
+						<Link
+							className="link"
+							href={`/product/AddProducts`}
+						>
+							<Button
+								aria-label="add"
+								variant="contained"
+								color="success"
+								endIcon={<AddCircleOutline />}
+							>
+								Add New Product
+							</Button>
+						</Link>
+					</div>
+					<div style={{ marginBottom: 10 }}>
 						<Button
 							aria-label="add"
 							variant="contained"
-							color="success"
-							endIcon={<AddCircleOutline />}
+							color="error"
+							endIcon={<Logout />}
+							onClick={handleLogOut}
 						>
-							Add New Product
+							LogOut
 						</Button>
-					</Link>
+					</div>
 				</div>
 				<Paper sx={{ width: "100%", overflow: "hidden" }}>
 					<TableContainer sx={{ maxHeight: 440 }}>

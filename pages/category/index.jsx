@@ -79,7 +79,7 @@ const AddCategory = () => {
 			}
 		}
 	};
-	if (route.isReady && state.length == 0) {
+	if (route.isReady && state == null) {
 		route.push("/login");
 	}
 	return (

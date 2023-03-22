@@ -61,6 +61,7 @@ const AuthForm = ({
 							name="id"
 							value={detail.id}
 							onChange={handleChange}
+							autoComplete={"off"}
 						/>
 					</div>
 					<div>
@@ -72,6 +73,7 @@ const AuthForm = ({
 							name="psw"
 							value={detail.psw}
 							onChange={handleChange}
+							autoComplete={"off"}
 						/>
 					</div>
 
