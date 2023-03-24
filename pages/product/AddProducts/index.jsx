@@ -166,9 +166,10 @@ const AddProducts = () => {
 			file
 		);
 		setImageLoading(true);
-		uploadTask.on("state_changed", () => {
+		uploadTask.on("state_changed", null, null, () => {
 			getDownloadURL(uploadTask.snapshot.ref)
 				.then((downloadURL) => {
+					console.log(downloadURL);
 					const filename = file.name;
 					setImage((image) => [
 						...image,
@@ -176,9 +177,8 @@ const AddProducts = () => {
 					]);
 					setImageLoading(false);
 				})
-				.catch((error) => {
-					console.log(error);
-					setImageLoading(false);
+				.catch((err) => {
+					console.log(err);
 				});
 		});
 	};
